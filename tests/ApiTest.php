@@ -37,6 +37,7 @@ class ApiTest extends TestCase
     {
         $this->getDefaults();
         $res = $this->http->supportWhiteFinance('513126198308270030');
-        $this->assertObjectHasAttribute('userInfo', $res);
+        print_r($res);
+        $this->assertObjectHasAttribute('data', $res);
     }
 }

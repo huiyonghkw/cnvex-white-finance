@@ -4,6 +4,7 @@ namespace Bravist\CnvexWhiteFinance;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
+use Bravist\CnvexWhiteFinance\Exception\RequestException as CnvexWhiteFinanceException;
 
 /**
 *
@@ -41,7 +42,7 @@ class Request
 
     public function setHost($host)
     {
-        $this->$host = $host;
+        $this->host = $host;
         return $this;
     }
 
@@ -101,7 +102,7 @@ class Request
                 'query' => $params
             ]);
 
-            if ($this->getDebug()) {
+            if ($this->getDebug() && $this->getLogger()) {
                 $this->getLogger()->debug('===Host:===');
                 $this->getLogger()->debug($api);
                 $this->getLogger()->debug('===Parameters:===');
@@ -110,7 +111,11 @@ class Request
                 $this->getLogger()->debug((string) $response->getBody());
             }
             $res = json_decode((string) $response->getBody());
-            return $res;
+
+            if ($res->errorCode) {
+                throw new CnvexWhiteFinanceException($res->errorMessage);
+            }
+            return $res->data;
         } catch (RequestException $e) {
             throw $e;
         }
@@ -124,7 +129,7 @@ class Request
                 'json' => $params
             ]);
 
-            if ($this->getDebug()) {
+            if ($this->getDebug() && $this->getLogger()) {
                 $this->getLogger()->debug('===Host:===');
                 $this->getLogger()->debug($api);
                 $this->getLogger()->debug('===Parameters:===');
@@ -133,7 +138,10 @@ class Request
                 $this->getLogger()->debug((string) $response->getBody());
             }
             $res = json_decode((string) $response->getBody());
-            return $res;
+            if ($res->errorCode) {
+                throw new CnvexWhiteFinanceException($res->errorMessage);
+            }
+            return $res->data;
         } catch (RequestException $e) {
             throw $e;
         }

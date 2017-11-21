@@ -17,6 +17,11 @@
         }
     ],
     "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Bravist\\CnvexWhiteFinance\\": "src/"
+        }
+    },
     "repositories": {
         "packagist": {
             "type": "composer",
