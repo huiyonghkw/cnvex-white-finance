@@ -51,7 +51,7 @@ class ServiceProvider extends LaravelServiceProvider
     protected function registerClassAliases()
     {
         $aliases = [
-            'cnvex.white.finance' => 'Bravist\CnvexWhiteFinance\Api',
+            'cnvex_white_finance' => 'Bravist\CnvexWhiteFinance\Api',
         ];
 
         foreach ($aliases as $key => $aliases) {
