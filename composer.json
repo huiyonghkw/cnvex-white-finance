@@ -3,11 +3,10 @@
     "description": "The cnvex.cn White Finance PHP SDK",
     "type": "library",
     "require": {
-        "guzzlehttp/guzzle": "^6.3",
-        "monolog/monolog": "^1.23"
+        "guzzlehttp/guzzle": "^6.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.4"
+        "phpunit/phpunit": "~4.0 || ^6.0"
     },
     "license": "MIT",
     "authors": [
