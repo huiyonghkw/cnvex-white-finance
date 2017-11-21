@@ -38,7 +38,7 @@ Add the following line to the section `providers` of `config/app.php`:
 ```php
 'providers' => [
     //...
-    Bravist\Cnvex\ServiceProvider::class,
+    Bravist\CnvexWhiteFinance\ServiceProvider::class,
 ],
 ```
 
@@ -51,7 +51,7 @@ as optional, you can use facade:
 
 ```php
 'aliases' => [
-    'Cnvex' => Bravist\Cnvex\Facade\CnvexWhiteFinance::class
+    'Cnvex' => Bravist\CnvexWhiteFinance\Facade\CnvexWhiteFinance::class
 ],
 ```
 
