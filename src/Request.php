@@ -115,7 +115,7 @@ class Request
             if ($res->errorCode) {
                 throw new CnvexWhiteFinanceException($res->errorMessage);
             }
-            return $res->data;
+            return $res;
         } catch (RequestException $e) {
             throw $e;
         }
@@ -141,7 +141,7 @@ class Request
             if ($res->errorCode) {
                 throw new CnvexWhiteFinanceException($res->errorMessage);
             }
-            return $res->data;
+            return $res;
         } catch (RequestException $e) {
             throw $e;
         }
