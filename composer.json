@@ -29,7 +29,7 @@
                 "Bravist\\CnvexWhiteFinance\\ServiceProvider"
             ],
             "aliases": {
-                "CnvexWhiteFinance": "\\Bravist\\Cnvex\\Facade\\CnvexWhiteFinance"
+                "CnvexWhiteFinance": "\\Bravist\\CnvexWhiteFinance\\Facade\\CnvexWhiteFinance"
             }
         }
     }
