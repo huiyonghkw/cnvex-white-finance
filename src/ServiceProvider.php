@@ -22,7 +22,7 @@ class ServiceProvider extends LaravelServiceProvider
      */
     protected function setupConfig()
     {
-        $source = realpath(__DIR__.'/../config/config.php');
+        $source = realpath(__DIR__.'/../config/cnvex_white_finance.php');
         if ($this->app instanceof LaravelApplication) {
             if ($this->app->runningInConsole()) {
                 $this->publishes([
