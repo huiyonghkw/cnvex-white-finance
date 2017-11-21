@@ -12,6 +12,6 @@ class CnvexWhiteFinance extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'cnvex_white_finance';
+        return 'cnvex.white.finance';
     }
 }

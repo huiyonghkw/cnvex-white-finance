@@ -51,7 +51,7 @@ as optional, you can use facade:
 
 ```php
 'aliases' => [
-    'Cnvex' => Bravist\CnvexWhiteFinance\Facade\CnvexWhiteFinance::class
+    'CnvexWhiteFinance' => Bravist\CnvexWhiteFinance\Facade\CnvexWhiteFinance::class
 ],
 ```
 
