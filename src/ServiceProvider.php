@@ -22,7 +22,7 @@ class ServiceProvider extends LaravelServiceProvider
      */
     protected function setupConfig()
     {
-        $source = realpath(__DIR__.'/../config/config.php');
+        $source = realpath(__DIR__.'/../config/cnvex_white_finance.php');
         if ($this->app instanceof LaravelApplication) {
             if ($this->app->runningInConsole()) {
                 $this->publishes([
@@ -51,7 +51,7 @@ class ServiceProvider extends LaravelServiceProvider
     protected function registerClassAliases()
     {
         $aliases = [
-            'cnvex' => 'Bravist\CnvexWhiteFinance\Request',
+            'cnvex_white_finance' => 'Bravist\CnvexWhiteFinance\Api',
         ];
 
         foreach ($aliases as $key => $aliases) {

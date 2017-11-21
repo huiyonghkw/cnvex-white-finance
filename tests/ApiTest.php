@@ -37,6 +37,47 @@ class ApiTest extends TestCase
     {
         $this->getDefaults();
         $res = $this->http->supportWhiteFinance('513126198308270030');
-        $this->assertObjectHasAttribute('userInfo', $res);
+        print_r($res);
+        $this->assertObjectHasAttribute('data', $res);
+    }
+
+    public function testSubscribeWhiteFinance()
+    {
+        $this->getDefaults();
+        $res = $this->http->subscribeWhiteFinance('5131261983082700301');
+        print_r($res);
+        $this->assertObjectHasAttribute('data', $res);
+    }
+
+    public function testCheckWhiteFinance()
+    {
+        $this->getDefaults();
+        $res = $this->http->checkWhiteFinance('5131261983082700301');
+        print_r($res);
+        $this->assertObjectHasAttribute('data', $res);
+    }
+
+    public function testCreateWhiteFinance()
+    {
+        $this->getDefaults();
+        $res = $this->http->createWhiteFinance('5131261983082700301', 1002, 100);
+        print_r($res);
+        $this->assertObjectHasAttribute('data', $res);
+    }
+
+    public function testExecuteWhiteFinance()
+    {
+        $this->getDefaults();
+        $res = $this->http->executeWhiteFinance('5131261983082700301', 1002, 100, 100);
+        print_r($res);
+        $this->assertObjectHasAttribute('data', $res);
+    }
+
+    public function testQueryWhiteFinance()
+    {
+        $this->getDefaults();
+        $res = $this->http->queryWhiteFinance('5131261983082700301');
+        print_r($res);
+        $this->assertObjectHasAttribute('data', $res);
     }
 }
