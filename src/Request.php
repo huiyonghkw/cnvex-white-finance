@@ -23,6 +23,12 @@ class Request
 
     public $logger;
 
+    protected $request;
+
+    protected $response;
+
+    protected $url;
+
     public function __construct(Client $client, array $config)
     {
         $this->client = $client;
@@ -98,6 +104,8 @@ class Request
     {
         try {
             $api = sprintf('%s/%s', $this->getApiHost(), $uri);
+            $this->setUrl($api);
+            $this->setRequest($params);
             $response = $this->client->request('GET', $api, [
                 'query' => $params
             ]);
@@ -110,6 +118,7 @@ class Request
                 $this->getLogger()->debug('===Response:===');
                 $this->getLogger()->debug((string) $response->getBody());
             }
+            $this->setResponse((string) $response->getBody());
             $res = json_decode((string) $response->getBody());
 
             if ($res->errorCode) {
@@ -125,6 +134,8 @@ class Request
     {
         try {
             $api = sprintf('%s/%s', $this->getApiHost(), $uri);
+            $this->setUrl($api);
+            $this->setRequest($params);
             $response = $this->client->request('POST', $api, [
                 'json' => $params
             ]);
@@ -137,6 +148,7 @@ class Request
                 $this->getLogger()->debug('===Response:===');
                 $this->getLogger()->debug((string) $response->getBody());
             }
+            $this->setResponse((string) $response->getBody());
             $res = json_decode((string) $response->getBody());
             if ($res->errorCode) {
                 throw new CnvexWhiteFinanceException($res->errorMessage);
@@ -145,6 +157,39 @@ class Request
         } catch (RequestException $e) {
             throw $e;
         }
+    }
+
+    public function setUrl($url)
+    {
+        $this->url = $url;
+        return $this;
+    }
+
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
+    public function setRequest($request)
+    {
+        $this->request = $request;
+        return $this;
+    }
+
+    public function setResponse($response)
+    {
+        $this->response = $response;
+        return $this;
     }
 
     public function setConfig(array $config)
