@@ -60,7 +60,7 @@ class ApiTest extends TestCase
     public function testCreateWhiteFinance()
     {
         $this->getDefaults();
-        $res = $this->http->createWhiteFinance('7777777', 1002, 100);
+        $res = $this->http->createWhiteFinance('7777777', 1004, 100);
         print_r($res);
         $this->assertObjectHasAttribute('data', $res);
     }
@@ -68,7 +68,7 @@ class ApiTest extends TestCase
     public function testExecuteWhiteFinance()
     {
         $this->getDefaults();
-        $res = $this->http->executeWhiteFinance('7777777', 1002, 100, 100);
+        $res = $this->http->executeWhiteFinance('7777777', 1004, 100, 100);
         print_r($res);
         $this->assertObjectHasAttribute('data', $res);
     }
