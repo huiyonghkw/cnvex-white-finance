@@ -36,7 +36,7 @@ class ApiTest extends TestCase
     public function testSupportWhiteFinance()
     {
         $this->getDefaults();
-        $res = $this->http->supportWhiteFinance('513126198308270030');
+        $res = $this->http->supportWhiteFinance('7777777');
         print_r($res);
         $this->assertObjectHasAttribute('data', $res);
     }
@@ -44,7 +44,7 @@ class ApiTest extends TestCase
     public function testSubscribeWhiteFinance()
     {
         $this->getDefaults();
-        $res = $this->http->subscribeWhiteFinance('5131261983082700301');
+        $res = $this->http->subscribeWhiteFinance('7777777');
         print_r($res);
         $this->assertObjectHasAttribute('data', $res);
     }
@@ -52,7 +52,7 @@ class ApiTest extends TestCase
     public function testCheckWhiteFinance()
     {
         $this->getDefaults();
-        $res = $this->http->checkWhiteFinance('5131261983082700301');
+        $res = $this->http->checkWhiteFinance('7777777');
         print_r($res);
         $this->assertObjectHasAttribute('data', $res);
     }
@@ -60,7 +60,7 @@ class ApiTest extends TestCase
     public function testCreateWhiteFinance()
     {
         $this->getDefaults();
-        $res = $this->http->createWhiteFinance('5131261983082700301', 1002, 100);
+        $res = $this->http->createWhiteFinance('7777777', 1002, 100);
         print_r($res);
         $this->assertObjectHasAttribute('data', $res);
     }
@@ -68,7 +68,7 @@ class ApiTest extends TestCase
     public function testExecuteWhiteFinance()
     {
         $this->getDefaults();
-        $res = $this->http->executeWhiteFinance('5131261983082700301', 1002, 100, 100);
+        $res = $this->http->executeWhiteFinance('7777777', 1002, 100, 100);
         print_r($res);
         $this->assertObjectHasAttribute('data', $res);
     }
@@ -76,7 +76,10 @@ class ApiTest extends TestCase
     public function testQueryWhiteFinance()
     {
         $this->getDefaults();
-        $res = $this->http->queryWhiteFinance('5131261983082700301');
+        $res = $this->http->queryWhiteFinance('7777777');
+        print_r($this->http->getUrl());
+        print_r($this->http->getRequest());
+        print_r($this->http->getResponse());
         print_r($res);
         $this->assertObjectHasAttribute('data', $res);
     }
