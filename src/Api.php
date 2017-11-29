@@ -31,12 +31,12 @@ class Api extends Request
         ]);
     }
 
-    public function createWhiteFinance($idCardNumber, $serialNumber, $amount, $idCardType = '统一社会信用代码')
+    public function createWhiteFinance($idCardNumber, $orderNo, $amount, $idCardType = '统一社会信用代码')
     {
         return $this->send('post', 'openapi/wpiousv01/lockCreditQuota', [
             'idCardType' => $idCardType,
             'idCardNumber' => $idCardNumber,
-            'serialNumber' => $serialNumber,
+            'orderNo' => $orderNo,
             'amount' => $amount
         ]);
     }
