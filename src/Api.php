@@ -41,12 +41,12 @@ class Api extends Request
         ]);
     }
 
-    public function executeWhiteFinance($idCardNumber, $serialNumber, $amount, $factAmount, $idCardType = '统一社会信用代码')
+    public function executeWhiteFinance($idCardNumber, $orderNo, $amount, $factAmount, $idCardType = '统一社会信用代码')
     {
         return $this->send('post', 'openapi/wpiousv01/useCreditQuota', [
             'idCardType' => $idCardType,
             'idCardNumber' => $idCardNumber,
-            'serialNumber' => $serialNumber,
+            'orderNo' => $orderNo,
             'amount' => $amount,
             'factAmount' => $factAmount
         ]);
