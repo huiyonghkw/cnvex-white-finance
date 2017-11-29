@@ -59,4 +59,5 @@ class Api extends Request
             'idCardNumber' => $idCardNumber
         ]);
     }
+    
 }
